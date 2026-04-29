@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     background: #4a0404; /* same red as your main bg */
 }
-/* 1. Deep, Multi-layered Background */
+/* Multi-layered Background */
 .form-container {
     min-height: 100vh;
     display: flex;
@@ -20,7 +20,7 @@ html, body {
     overflow: hidden;
 }
 
-/* Floating background decoration for extra depth */
+/* Floating background  */
 .form-container::before {
     content: "";
     position: absolute;
@@ -33,7 +33,7 @@ html, body {
     pointer-events: none;
 }
 
-/* 2. The Glassmorphism Card */
+/* The Glassmorphism Card */
 .form-card {
     background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
     backdrop-filter: blur(15px); /* Blurs the background behind the card */
@@ -47,7 +47,7 @@ html, body {
     text-align: center;
 }
 
-/* 3. Typography */
+/* Typography */
 .form-card h1 {
     color: #ffffff;
     font-size: 2rem;
@@ -63,7 +63,7 @@ html, body {
     margin-bottom: 40px;
 }
 
-/* 4. "Invisible" Input Fields */
+/* Input Fields */
 .form-field {
     display: flex;
     flex-direction: column;
