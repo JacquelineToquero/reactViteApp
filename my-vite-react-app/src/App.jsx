@@ -1,11 +1,11 @@
 import React from "react";
-import TalentForm from "./components/TalentForm";
-
+import DataLogger from "./components/DataLogger";
 
 function App() {
   return (
     <div>
-      <TalentForm />
+      {/* Change <TalentForm /> to <DataLogger /> */}
+      <DataLogger />
     </div>
   );
 }
