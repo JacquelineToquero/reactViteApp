@@ -13,13 +13,27 @@ function DataLogger() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // POINT TO AZURE: Replace localhost with your actual Azure URL
+      // API call to your Azure backend
       const response = await axios.post('https://data-logger-api.azurewebsites.net/submit', formData);
-      console.log(response.data);
-      alert("Field Research Data Logged Successfully!");
+      
+      if (response.status === 201 || response.status === 200) {
+        console.log("API Response:", response.data);
+        alert("Field Research Data Logged Successfully!");
+
+        // RESET THE FORM: Using your actual research fields instead of talent fields
+        setFormData({
+          location: '',
+          waterDepth: 0,
+          soilConsistency: 'Medium',
+          snailDensity: 0
+        });
+        
+        // Optional: clear the actual input elements if not using value={formData...}
+        e.target.reset();
+      }
     } catch (err) {
       console.error("Submission Error:", err);
-      alert("Error logging data. Check console.");
+      alert("Failed to submit form. Please try again.");
     }
   };
 
@@ -32,6 +46,7 @@ function DataLogger() {
             <label>Plot Location</label>
             <input 
               type="text" 
+              value={formData.location} // Added controlled input
               required 
               placeholder="e.g., Barangay Zapote Plot A"
               onChange={(e) => setFormData({...formData, location: e.target.value})} 
@@ -42,8 +57,9 @@ function DataLogger() {
             <label>Water Depth (cm)</label>
             <input 
               type="number" 
+              value={formData.waterDepth}
               required 
-              onChange={(e) => setFormData({...formData, waterDepth: parseFloat(e.target.value)})} 
+              onChange={(e) => setFormData({...formData, waterDepth: parseFloat(e.target.value) || 0})} 
             />
           </div>
 
@@ -63,8 +79,9 @@ function DataLogger() {
             <label>Snail Density (count/sqm)</label>
             <input 
               type="number" 
+              value={formData.snailDensity}
               required 
-              onChange={(e) => setFormData({...formData, snailDensity: parseInt(e.target.value)})} 
+              onChange={(e) => setFormData({...formData, snailDensity: parseInt(e.target.value) || 0})} 
             />
           </div>
 
