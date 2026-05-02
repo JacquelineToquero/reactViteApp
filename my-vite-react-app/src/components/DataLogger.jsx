@@ -14,7 +14,7 @@ function DataLogger() {
     e.preventDefault();
     try {
       // API call to your Azure backend
-     const response = await axios.post('[https://kuhologger.azurewebsites.net/submit](https://kuhologger.azurewebsites.net/submit)', formData);
+const response = await axios.post("https://kuhologger-cucwbnapc8g8b4f2.southeastasia-01.azurewebsites.net/submit", formData);
       
       if (response.status === 201 || response.status === 200) {
         console.log("API Response:", response.data);
