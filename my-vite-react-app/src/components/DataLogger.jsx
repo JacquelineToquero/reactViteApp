@@ -14,7 +14,7 @@ function DataLogger() {
     e.preventDefault();
     try {
       // API call to your Azure backend
-     const response = await axios.post('[https://kuhol-logger-api.azurewebsites.net/submit](https://kuhol-logger-api.azurewebsites.net/submit)', formData);
+     const response = await axios.post('[https://kuhologger.azurewebsites.net/submit](https://kuhologger.azurewebsites.net/submit)', formData);
       
       if (response.status === 201 || response.status === 200) {
         console.log("API Response:", response.data);
