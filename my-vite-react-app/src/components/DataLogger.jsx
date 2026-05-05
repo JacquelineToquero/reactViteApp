@@ -28,7 +28,7 @@ const response = await axios.post("https://kuhologger-cucwbnapc8g8b4f2.southeast
           snailDensity: 0
         });
         
-        // Optional: clear the actual input elements if not using value={formData...}
+        
         e.target.reset();
       }
     } catch (err) {
@@ -46,7 +46,7 @@ const response = await axios.post("https://kuhologger-cucwbnapc8g8b4f2.southeast
             <label>Plot Location</label>
             <input 
               type="text" 
-              value={formData.location} // Added controlled input
+              value={formData.location} 
               required 
               placeholder="e.g., Barangay Zapote Plot A"
               onChange={(e) => setFormData({...formData, location: e.target.value})} 

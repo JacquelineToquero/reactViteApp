@@ -1,7 +1,7 @@
 /* ResearchLogger.css */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
-/* Force reset everything */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -50,7 +50,7 @@ h2 {
 .input-group {
   margin-bottom: 20px;
   display: flex;
-  flex-direction: column; /* This fixes the overlapping labels */
+  flex-direction: column; 
   text-align: left;
 }
 
